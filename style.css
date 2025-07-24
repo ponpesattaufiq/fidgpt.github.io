@@ -1,0 +1,93 @@
+/* Gaya dasar untuk body */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh; /* Memastikan body mengisi seluruh tinggi viewport */
+    background-color: #f0f2f5; /* Warna latar belakang lembut */
+    color: #333; /* Warna teks umum */
+    overflow: hidden; /* Mencegah scroll saat loading screen aktif */
+}
+
+/* Gaya untuk loading screen */
+#loading-screen {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    position: fixed; /* Membuat loading screen tetap di atas konten */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #ffffff; /* Latar belakang putih */
+    z-index: 9999; /* Memastikan loading screen di lapisan paling atas */
+    transition: opacity 0.5s ease-out; /* Transisi saat menghilang */
+}
+
+/* Kelas untuk menyembunyikan loading screen */
+#loading-screen.hidden {
+    opacity: 0; /* Membuat loading screen transparan */
+    pointer-events: none; /* Mencegah interaksi setelah disembunyikan */
+}
+
+/* Gaya untuk spinner animasi */
+.spinner {
+    border: 8px solid #f3f3f3; /* Bagian dasar spinner */
+    border-top: 8px solid #3498db; /* Bagian atas yang berputar (biru) */
+    border-radius: 50%; /* Membuat bentuk lingkaran */
+    width: 60px;
+    height: 60px;
+    animation: spin 1s linear infinite; /* Animasi berputar */
+    margin-bottom: 20px;
+}
+
+/* Keyframes untuk animasi berputar */
+@keyframes spin {
+    0% { transform: rotate(0deg); } /* Mulai dari 0 derajat */
+    100% { transform: rotate(360deg); } /* Berakhir di 360 derajat (satu putaran penuh) */
+}
+
+/* Gaya untuk judul loading screen */
+h1 {
+    color: #3498db; /* Warna biru untuk judul */
+    margin-bottom: 10px;
+}
+
+/* Gaya untuk paragraf di loading screen */
+p {
+    color: #666; /* Warna abu-abu untuk teks */
+    font-size: 1.1em;
+}
+
+/* Gaya dasar untuk konten utama (akan terlihat setelah loading) */
+#main-content {
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1); /* Efek bayangan */
+    border-radius: 8px; /* Sudut membulat */
+    background-color: #fff;
+    max-width: 800px;
+    width: 90%; /* Responsif terhadap lebar layar */
+    text-align: center; /* Teks di tengah */
+}
+
+/* Gaya untuk tombol */
+button {
+    background-color: #28a745; /* Warna hijau */
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer; /* Menunjukkan bisa diklik */
+    font-size: 1em;
+    margin-top: 20px;
+    transition: background-color 0.3s ease; /* Transisi warna saat hover */
+}
+
+/* Efek hover untuk tombol */
+button:hover {
+    background-color: #218838; /* Warna hijau lebih gelap saat dihover */
+}
